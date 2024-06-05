@@ -1,0 +1,113 @@
+:root {
+  
+    --r1:#201658;
+    --r2:#2D9596;
+    --r3:#9AD0C2;
+    --r4:#F1FADA;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: var(--r1);
+      }
+    button {
+        background-color: var(--r1);
+        color: var(--r4);
+        height: 40px;
+        width: 100px;
+        border-radius: 30px;
+        font-size: large;
+        border-color: var(--r1);
+    }
+    
+    button:hover {
+        background-color: var(--r2);
+        color: black;
+    }
+    
+    @media (max-width: 1050px) {
+   
+    
+        .menu .tx {
+            width: 70px;
+            margin-right: 50px;
+        }
+        .login1{
+            margin-left: 50%;
+        }
+    
+        button {
+            margin-left: 100px;
+        }
+    
+        .list_intro button{
+     position: static;
+     margin-left: 0%;
+        }
+    }
+    
+    @media (max-width: 950px) {
+        .login1{
+            margin-left: 60%;
+        }
+        
+    }
+    
+    @media (max-width: 900px) {
+        .login , .menu , .menu-Courses{
+    
+            display: none;
+        }
+        .menuList{
+            display:contents;
+            
+        }
+   
+        .login1{
+            margin-left: 80%;
+        }
+    
+        #info{
+            display: grid;
+            grid-template-columns: 10% 40% 30% ;
+        }
+    
+    
+    }
+    
+    @media (max-width: 890px) {
+       
+         #info{
+            display: grid;
+            grid-template-columns: 10% 80% ;
+        }
+       
+    }
+    
+    @media (max-width: 875px) {
+       
+        .list_intro form button {
+            font-size: 15px;
+        }
+    }
+    
+    @media (max-width: 680px) {
+       
+        .list_intro form button {
+            font-size:10px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+       
+        .list_intro form button {
+            font-size: 7px;
+        }
+    }
+    
+    
+    
+    
+    

@@ -1,0 +1,186 @@
+:root {
+  --r1: #201658;
+  --r2: #2D9596;
+  --r3: #9AD0C2;
+  --r4: #F1FADA;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: var(--r2);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--r4);
+  width: auto;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--r3);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nested-dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--r4);
+  width: auto;
+  min-width: 160px;
+  left: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 700px) {
+  .dropdown-content, .nested-dropdown {
+    min-width: 100px; /* Adjust minimum width for smaller screens */
+  }
+  .dropbtn{
+font-size: 6 px;
+  }
+}
+:root {
+  --main-color: #2D9596; /* Main color */
+  --hover-color: #9AD0C2; /* Hover color */
+  --bg-color: #F1FADA; /* Background color */
+  --text-color: #201658; /* Text color */
+  --font-size: 14px; /* Font size */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px;
+  font-size: var(--font-size);
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-color);
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 10px 14px;
+  display: block;
+  text-decoration: none;
+  font-size: var(--font-size);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--hover-color);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+:root {
+  --main-color: #2D9596; /* Main color */
+  --hover-color: #9AD0C2; /* Hover color */
+  --bg-color: #F1FADA; /* Background color */
+  --text-color: #201658; /* Text color */
+  --font-size: 14px; /* Font size */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px;
+  font-size: var(--font-size);
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-color);
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a, .nested-dropdown button {
+  color: var(--text-color);
+  padding: 10px 14px;
+  display: block;
+  text-decoration: none;
+  font-size: var(--font-size);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover, .nested-dropdown button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Position nested dropdown */
+.nested-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 160px;
+}
+
+.dropdown-content:hover .nested-dropdown {
+  display: block;
+}

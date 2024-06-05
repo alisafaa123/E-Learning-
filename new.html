@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nested Dropdown with HTML, CSS, and JavaScript</title>
+<style>
+  /* Your CSS styles here */
+  :root {
+    --r1: #201658;
+    --r2: #2D9596;
+    --r3: #9AD0C2;
+    --r4: #F1FADA;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    background-color: var(--r1);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--r4);
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: var(--r3);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .nested-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--r4);
+    min-width: 160px;
+    left: 100%;
+    top: 0;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#" class="dropdown-toggle">My Courses</a>
+    <div class="nested-dropdown">
+      <a href="#">Course 1</a>
+      <a href="#">Course 2</a>
+      <a href="#">Course 3</a>
+    </div>
+    <a href="#" class="dropdown-toggle">Language</a>
+    <div class="nested-dropdown">
+      <a href="#">English</a>
+      <a href="#">Spanish</a>
+      <a href="#">French</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const nestedDropdown = this.nextElementSibling;
+        closeAllNestedDropdowns();
+        nestedDropdown.style.display = nestedDropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    function closeAllNestedDropdowns() {
+      const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+      nestedDropdowns.forEach(dropdown => {
+        dropdown.style.display = 'none';
+      });
+    }
+
+    window.addEventListener('click', function(e) {
+      if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.nested-dropdown')) {
+        closeAllNestedDropdowns();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
